@@ -3,6 +3,7 @@ package solution.math;
 /**
  * @author By RuiCUI
  * 2017-12-27
+ * Easy
  * Question 007:Given a 32-bit signed integer, reverse digits of an integer.
  * Assume we are dealing with an environment which could only hold integers within the 32-bit signed integer range. 
  * For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
@@ -15,6 +16,8 @@ public class ReverseInteger {
 	
 	/**
 	 * 我自己写的方法
+	 * 时间复杂度：O(n)
+	 * 空间复杂度：O(1)
 	 * @param nums
 	 * @param target
 	 * @return
@@ -46,16 +49,15 @@ public class ReverseInteger {
 	
 	/**
 	 * 官网没有solution,这是其他人的答案,利用余数
-	 * 时间复杂度：O(n) 
+	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(1)
 	 * @param nums
 	 * @param target
 	 * @return
 	 */
-	public static int reverse1(int x) {
+	public static int reverse1(int x){
         long result =0;
-        while(x != 0)
-        {
+        while(x != 0){
             result = (result*10) + (x%10);
             if(result > Integer.MAX_VALUE) return 0;
             if(result < Integer.MIN_VALUE) return 0;
