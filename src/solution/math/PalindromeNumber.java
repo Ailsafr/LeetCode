@@ -46,8 +46,7 @@ public class PalindromeNumber {
 	 * 答案1--翻转后一半的数字
 	 * 时间复杂度：O(log10n) log十n
 	 * 空间复杂度：O(1)
-	 * @param nums
-	 * @param target
+	 * @param x
 	 * @return
 	 */
 	public static boolean isPalindrome1(int x) {

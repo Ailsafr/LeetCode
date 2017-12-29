@@ -18,8 +18,7 @@ public class ReverseInteger {
 	 * 我自己写的方法
 	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(1)
-	 * @param nums
-	 * @param target
+	 * @param x
 	 * @return
 	 */
 	private static int reverse(int x) {
@@ -51,8 +50,7 @@ public class ReverseInteger {
 	 * 官网没有solution,这是其他人的答案,利用余数
 	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(1)
-	 * @param nums
-	 * @param target
+	 * @param x
 	 * @return
 	 */
 	public static int reverse1(int x){

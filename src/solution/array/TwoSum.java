@@ -19,6 +19,8 @@ public class TwoSum {
 	
 	/**
 	 * 我自己写的方法（跟方法1思想一致，细节少了异常抛出和返回处理）
+	 * 时间复杂度：O(n2) n的平方
+	 * 空间复杂度：O(1)
 	 * @param nums
 	 * @param target
 	 * @return
