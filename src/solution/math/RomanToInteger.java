@@ -25,6 +25,9 @@ public class RomanToInteger {
 	 */
 	private static int romanToInt(String s) throws Exception {
 		int result = 0;
+		if("".equals(s)){
+			throw new Exception("Input is not right");
+		}
 		for(int i=0;i<s.length();i++){
 			if(i==0){
 				result += getValut(s.substring(0,1));
