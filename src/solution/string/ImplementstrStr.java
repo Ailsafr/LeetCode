@@ -2,7 +2,7 @@ package solution.string;
 
 /**
  * @author By RuiCUI
- * 2018-01-15
+ * 2018-01-25
  * Easy
  * Question 028:Implement strStr().
  * Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
