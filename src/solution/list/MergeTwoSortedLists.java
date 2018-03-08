@@ -30,7 +30,6 @@ public class MergeTwoSortedLists {
 	 */
 	private static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 		ListNode result = null;
-		ListNode results = null;
 		if(l1==null){
 			return l2;
 		}else if(l2==null){
