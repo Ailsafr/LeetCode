@@ -6,7 +6,7 @@ import java.util.Stack;
  * @author By RuiCUI
  * 2018-03-10
  * Easy
- * Given two binary trees, write a function to check if they are the same or not.
+ * Question 100:Given two binary trees, write a function to check if they are the same or not.
  * Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
  * Example 1:
  * Input:  1         1
