@@ -43,8 +43,8 @@ public class SameTree {
 
 	/**
 	 * 我自己写的方法--刚开始被例子里的input给误导了，完全不需要多写一个方法出来
-	 * 时间复杂度：*
-	 * 空间复杂度：O(1)
+	 * 时间复杂度：O(n)
+	 * 空间复杂度：O(n)
 	 * @param p
 	 * @param q
 	 * @return
@@ -81,8 +81,8 @@ public class SameTree {
 	
 	/**
 	 * 我自己写的方法--刚开始被例子里的input给误导了，完全不需要多写一个方法出来
-	 * 时间复杂度：*
-	 * 空间复杂度：O(1)
+	 * 时间复杂度：O(n)
+	 * 空间复杂度：O(n)
 	 * @param p
 	 * @param q
 	 * @return
