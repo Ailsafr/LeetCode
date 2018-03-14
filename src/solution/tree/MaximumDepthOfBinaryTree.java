@@ -19,16 +19,6 @@ import java.util.LinkedList;
  * return its depth = 3.
  */
 public class MaximumDepthOfBinaryTree {
-
-	/**
-	 * Definition for a binary tree node.
-	 */
-	public static class TreeNode {
-		int val;
-	    TreeNode left;
-	    TreeNode right;
-	    TreeNode(int x) { val = x; }
-	}
 	
 	/**
 	 * 我自己写的方法

@@ -32,16 +32,6 @@ import java.util.Stack;
 public class SameTree {
 
 	/**
-	 * Definition for a binary tree node.
-	 */
-	public static class TreeNode {
-		int val;
-	    TreeNode left;
-	    TreeNode right;
-	    TreeNode(int x) { val = x; }
-	}
-
-	/**
 	 * 我自己写的方法--刚开始被例子里的input给误导了，完全不需要多写一个方法出来
 	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(n)
