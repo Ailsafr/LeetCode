@@ -106,7 +106,7 @@ public class BalancedBinaryTree {
 		TreeNode t3 = new TreeNode(20);
 		TreeNode t4 = new TreeNode(15);
 		TreeNode t5 = new TreeNode(7);
-		TreeNode t6 = new TreeNode(7);
+		//TreeNode t6 = new TreeNode(7);
 		t3.left = t4;
 		t3.right = t5;
 		//t2.left = t6;
