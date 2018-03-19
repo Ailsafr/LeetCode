@@ -1,8 +1,5 @@
 package solution.tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * @author By RuiCUI
  * 2018-03-16
@@ -32,8 +29,8 @@ import java.util.Queue;
 public class BalancedBinaryTree {
 
 	/**
-	 * 我自己写的方法--递归--DFS
-	 * 时间复杂度：O(n)
+	 * 我自己写的方法
+	 * 时间复杂度：O(NlogN)
 	 * 空间复杂度：O(n)
 	 * @param root
 	 * @return
@@ -61,40 +58,47 @@ public class BalancedBinaryTree {
 	}
 	
 	/**
-	 * 我自己写的方法--迭代--BFS
+	 * 官网没有solution,这是其他人的答案,跟我的答案一样
+	 * 时间复杂度：O(NlogN)
+	 * 空间复杂度：O(n)
+	 * @param root
+	 * @return
+	 */
+	public int depth(TreeNode root) {
+        if (root==null) return 0;
+        return Math.max(depth(root.left), depth(root.right)) + 1;
+    }
+    public boolean isBalanced1(TreeNode root) {
+        if (root==null) return true;
+        
+        int left=depth(root.left);
+        int right=depth(root.right);
+        
+        return Math.abs(left - right) <= 1 && isBalanced1(root.left) && isBalanced1(root.right);
+    }
+	
+	/**
+	 * 官网没有solution,这是其他人的答案,DFS递归
 	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(n)
 	 * @param root
 	 * @return
 	 */
-	public static boolean isBalanced1(TreeNode root) {
-		if(root==null){
-			return true;
-		}
-		Queue<TreeNode> q = new LinkedList<TreeNode>();
-		q.offer(root);
-		q.offer(root);
-		int num = 0;
-		while(q.size()>0){
-			TreeNode tree1 = q.poll();
-			TreeNode tree2 = q.poll();
-			
-			if(tree1.left!=null&&tree2.right!=null){
-				q.offer(tree1.left);
-				q.offer(tree2.right);
-			}else if(tree1.left!=null&&tree2.right==null){
-				q.offer(tree1.left);
-				num++;
-			}else if(tree1.left==null&&tree2.right!=null){
-				q.offer(tree2.right);
-				num++;
-			}
-		}
-		if(num>1){
-			return false;
-		}
-		return true;
-	}
+	public int dfsHeight(TreeNode root) {
+        if (root==null) return 0;
+        
+        int leftHeight = dfsHeight(root.left);
+        if (leftHeight == -1) return -1;
+        int rightHeight = dfsHeight(root.right);
+        if (rightHeight == -1) return -1;
+        
+        if (Math.abs(leftHeight - rightHeight) > 1)  return -1;
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+    public boolean isBalanced2(TreeNode root) {
+        return dfsHeight (root) != -1;
+    }
+	
 	
 	public static void main(String[] args) {
 		TreeNode t1 = new TreeNode(3);
