@@ -47,7 +47,7 @@ public class PascalsTriangleII {
     }
 	
 	/**
-	 * 官网没有solution,这是其他人的答案,好巧妙啊，
+	 * 官网没有solution,这是其他人的答案,好巧妙啊
 	 * 时间复杂度：O(n2) n的平方
 	 * 空间复杂度：O(n)
 	 * @param rowIndex
