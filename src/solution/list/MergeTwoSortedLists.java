@@ -10,15 +10,6 @@ package solution.list;
  * Output: 1->1->2->3->4->4
  */
 public class MergeTwoSortedLists {
-
-	/**
-	 * Definition for singly-linked list.
-	 */
-	public static class ListNode {
-		 int val;
-		 ListNode next;
-		 ListNode(int x) { val = x; }
-	}
 	
 	/**
 	 * 我自己写的方法  错误的  想不通怎么用next 感觉链表没学好  笨笨的

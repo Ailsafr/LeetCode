@@ -11,15 +11,6 @@ package solution.list;
  * Given 1->1->2->3->3, return 1->2->3.
  */
 public class RemoveDuplicatesfromSortedList {
-
-	/**
-	 * Definition for singly-linked list.
-	 */
-	public static class ListNode {
-	    int val;
-	    ListNode next;
-	    ListNode(int x) { val = x; }
-	}
 	 
 	/**
 	 * 我自己写的方法
