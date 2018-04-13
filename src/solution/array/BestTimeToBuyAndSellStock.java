@@ -66,8 +66,8 @@ public class BestTimeToBuyAndSellStock {
     }
 	
 	/**
-	 * 答案1--One Pass
-	 * 时间复杂度：O(n) n的平方 
+	 * 答案2--One Pass
+	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(1)
 	 * @param prices
 	 * @return
