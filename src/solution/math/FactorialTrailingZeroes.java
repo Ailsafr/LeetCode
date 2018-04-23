@@ -2,7 +2,7 @@ package solution.math;
 
 /**
  * @author By RuiCUI
- * 2018-04-17
+ * 2018-04-20
  * Easy
  * Question 172:Factorial Trailing Zeroes.
  * Given an integer n, return the number of trailing zeroes in n!.
