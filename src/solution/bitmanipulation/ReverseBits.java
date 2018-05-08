@@ -1,6 +1,5 @@
 package solution.bitmanipulation;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,7 +53,7 @@ public class ReverseBits {
 	 * @param n
 	 * @return
 	 */
-	public int reverseBits1(int n) {
+	public static int reverseBits1(int n) {
 	    if (n == 0) return 0;
 	    
 	    int result = 0;
