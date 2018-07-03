@@ -15,7 +15,7 @@ package solution.tree;
 	   0      _4       7       9
 	         /  \
 	         3   5
- * Example 1:
+ * Example 1: 
  * Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
  * Output: 6
  * Explanation: The LCA of nodes 2 and 8 is 6.
