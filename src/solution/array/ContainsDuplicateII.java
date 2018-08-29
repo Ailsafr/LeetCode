@@ -63,7 +63,7 @@ public class ContainsDuplicateII {
 	}
 	
 	/**
-	 * 答案2--官网没有solution,这是其他人的答案,跟我的答案差不多
+	 * 官网没有solution,这是其他人的答案,跟我的答案差不多
 	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(n)
 	 * @param nums

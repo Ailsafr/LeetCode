@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * @author By RuiCUI
- * 2018-08-27
+ * 2018-08-28
  * Easy
  * Question 447:Number of Boomerangs.
  * Given n points in the plane that are all pairwise distinct, 
