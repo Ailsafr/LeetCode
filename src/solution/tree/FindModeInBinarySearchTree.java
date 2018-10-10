@@ -145,7 +145,7 @@ public class FindModeInBinarySearchTree {
     private void inorder3(TreeNode node){
         if(node.left!=null) inorder(node.left);
         map.put(node.val, map.getOrDefault(node.val, 0)+1);
-        max = Math.max(max, map.get(node.val));
+        max3 = Math.max(max3, map.get(node.val));
         if(node.right!=null) inorder(node.right); 
     }
 	
