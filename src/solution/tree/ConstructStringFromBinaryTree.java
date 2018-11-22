@@ -77,7 +77,7 @@ public class ConstructStringFromBinaryTree {
     }
 	
 	/**
-	 * 答案2-- Iterative Method Using stack[Accepted]
+	 * 答案2--Iterative Method Using stack[Accepted]
 	 * 时间复杂度：O(n)
 	 * 空间复杂度：O(n)
 	 * @param t
