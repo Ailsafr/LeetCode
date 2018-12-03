@@ -34,7 +34,7 @@ public class ValidAnagram {
 		if(s.length()!=t.length()){
 			return false;
 		}
-		HashMap<Character,Integer> map = new HashMap();
+		HashMap<Character,Integer> map = new HashMap<Character, Integer>();
 		for(int i=0;i<s.length();i++){
 			char c = s.charAt(i);
 			if(map.containsKey(c)){

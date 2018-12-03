@@ -179,7 +179,6 @@ public class KeyboardRow {
 	
 	public static void main(String[] args) {
 		String[] words = {"Hello", "Alaska", "Dad", "Peace"};
-		String[] ss = findWords(words);
 		System.out.println(findWords(words));
 	}
 
