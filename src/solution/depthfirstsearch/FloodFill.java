@@ -1,4 +1,4 @@
-package depthfirstsearch;
+package solution.depthfirstsearch;
 
 /**
  * @author By RuiCUI
