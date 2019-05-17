@@ -44,7 +44,7 @@ public class MatrixCellsInDistanceOrder {
 	/**
 	 * 我自己写的方法
 	 * 时间复杂度：O(n)
-	 * 空间复杂度：O(1)
+	 * 空间复杂度：O(n)
 	 * @param R
 	 * @param C
 	 * @param r0
