@@ -2,7 +2,7 @@ package solution.math;
 
 /**
  * @author By RuiCUI
- * 2018-05-20
+ * 2019-05-20
  * Easy
  * Question 1037:Valid Boomerang.
  * A boomerang is a set of 3 points that are all distinct and not in a straight line.
@@ -24,8 +24,8 @@ public class ValidBoomerang {
 
 	/**
 	 * 我自己写的方法
-	 * 时间复杂度：O(n)
-	 * 空间复杂度：O(n)
+	 * 时间复杂度：O(1)
+	 * 空间复杂度：O(1)
 	 * @param points
 	 * @return
 	 */
@@ -39,8 +39,8 @@ public class ValidBoomerang {
 	
 	/**
 	 * 官网没有solution,这是其他人的答案
-	 * 时间复杂度：O(n)
-	 * 空间复杂度：O(n)
+	 * 时间复杂度：O(1)
+	 * 空间复杂度：O(1)
 	 * @param points
 	 * @return
 	 */
@@ -56,8 +56,8 @@ public class ValidBoomerang {
 	
 	/**
 	 * 官网没有solution,这是其他人的答案
-	 * 时间复杂度：O(n)
-	 * 空间复杂度：O(n)
+	 * 时间复杂度：O(1)
+	 * 空间复杂度：O(1)
 	 * @param points
 	 * @return
 	 */
