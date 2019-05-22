@@ -38,21 +38,21 @@ public class RobotBoundedInCircle {
 
 	/**
 	 * 我自己写的方法
-	 * 时间复杂度：O(n)
+	 * 时间复杂度：O()
 	 * 空间复杂度：O(1)
 	 * @param instructions
 	 * @return
 	 */
 	public static boolean isRobotBounded(String instructions) {
 		int direction = 0;
-		 // N, E, S, W
-		 int[] start = {0,0};
-		 int[][] moves = {{0,1},{1,0},{0,-1},{-1,0}};
-		 int i = 0;
-		 for(int epoch=0;epoch<4;epoch++)
-		 {
-			 while(i<instructions.length())
-			 {
+		// N, E, S, W
+		int[] start = {0,0};
+		int[][] moves = {{0,1},{1,0},{0,-1},{-1,0}};
+		int i = 0;
+		for(int epoch=0;epoch<4;epoch++)
+		{
+			while(i<instructions.length())
+			{
 				char c =  instructions.charAt(i);
 				if(c=='L') {
 					direction = (4+direction-1)%4;
@@ -63,13 +63,13 @@ public class RobotBoundedInCircle {
 					start[1] += moves[direction][1];
 				}
 				i++;
-			 }
-			 i=0;
-		 }
-		 int dist = Math.abs(start[0]) + Math.abs(start[1]);
-		 if(dist>0) return false;
+			}
+			i=0;
+		}
+		int dist = Math.abs(start[0]) + Math.abs(start[1]);
+		if(dist>0) return false;
 		 
-		 return true;
+		return true;
     }
 	
 	/**
