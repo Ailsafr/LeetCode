@@ -41,9 +41,9 @@ public class CombinationSum {
 	 * @param target
 	 * @return
 	 */
-	public static List<List<Integer>> combinationSum(int[] nums, int target) {
+	public static List<List<Integer>> combinationSum(int[] candidates, int target) {
 	    List<List<Integer>> list = new ArrayList<>();
-	    helper(list, new ArrayList<>(), nums, target, 0);
+	    helper(list, new ArrayList<>(), candidates, target, 0);
 	    return list;
 	}
 
@@ -67,10 +67,10 @@ public class CombinationSum {
 	 * @param target
 	 * @return
 	 */
-	public List<List<Integer>> combinationSum1(int[] nums, int target) {
+	public List<List<Integer>> combinationSum1(int[] candidates, int target) {
 	    List<List<Integer>> list = new ArrayList<>();
-	    Arrays.sort(nums);
-	    backtrack(list, new ArrayList<>(), nums, target, 0);
+	    Arrays.sort(candidates);
+	    backtrack(list, new ArrayList<>(), candidates, target, 0);
 	    return list;
 	}
 
@@ -94,27 +94,27 @@ public class CombinationSum {
 	 * @param target
 	 * @return
 	 */
-	public static List<List<Integer>> combinationSum2(int[] cands, int t) {
-        Arrays.sort(cands); // sort candidates to try them in asc order
+	public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Arrays.sort(candidates); // sort candidates to try them in asc order
         List<List<List<Integer>>> dp = new ArrayList<>();
-        for (int i = 1; i <= t; i++) { // run through all targets from 1 to t
+        for (int i = 1; i <= target; i++) { // run through all targets from 1 to t
             List<List<Integer>> newList = new ArrayList(); // combs for curr i
             // run through all candidates <= i
-            for (int j = 0; j < cands.length && cands[j] <= i; j++) {
+            for (int j = 0; j < candidates.length && candidates[j] <= i; j++) {
                 // special case when curr target is equal to curr candidate
-                if (i == cands[j]) newList.add(Arrays.asList(cands[j]));
+                if (i == candidates[j]) newList.add(Arrays.asList(candidates[j]));
                 // if current candidate is less than the target use prev results
-                else for (List<Integer> l : dp.get(i-cands[j]-1)) {
-                    if (cands[j] <= l.get(0)) {
+                else for (List<Integer> l : dp.get(i-candidates[j]-1)) {
+                    if (candidates[j] <= l.get(0)) {
                         List cl = new ArrayList<>();
-                        cl.add(cands[j]); cl.addAll(l);
+                        cl.add(candidates[j]); cl.addAll(l);
                         newList.add(cl);
                     }
                 }
             }
             dp.add(newList);
         }
-        return dp.get(t-1);
+        return dp.get(target-1);
     }
 	
 	public static void main(String[] args) {
