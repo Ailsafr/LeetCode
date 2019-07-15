@@ -1,7 +1,8 @@
 package test.designpatterns;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class StrategyTest {
 		Person p8 = new Person(8,"zhaoliu",28);
 		Person p9 = new Person(9,"zhangsan",30);
 		Person p10 = new Person(10,"zhangsan",15);
-		List<Object> list = new ArrayList<Object>();
+		List<Person> list = new ArrayList<Person>();
 		list.add(p1);
 		list.add(p2);
 		list.add(p3);
@@ -33,101 +34,124 @@ public class StrategyTest {
 		list.add(p9);
 		list.add(p10);
 		
-		IdSort idSort = new IdSort();
-		Environment environment = new Environment(idSort);
-		list = environment.sort(list, false);
+		IdAscSort idAscSort = new IdAscSort();
+		Environment environment = new Environment(idAscSort);
+		environment.sort(list);
 		
-		NameSort nameSort = new NameSort();
-		environment.setStrategy(nameSort);
-		list = environment.sort(list, true);
+		IdDescSort idDescSort = new IdDescSort();
+		environment.setStrategy(idDescSort);
+		environment.sort(list);
 		
-		AgeSort ageSort = new AgeSort();
-		environment.setStrategy(ageSort);
-		list = environment.sort(list, false);
+		NameAscSort nameAscSort = new NameAscSort();
+		environment.setStrategy(nameAscSort);
+		environment.sort(list);
+		
+		NameDescSort nameDescSort = new NameDescSort();
+		environment.setStrategy(nameDescSort);
+		environment.sort(list);
+		
+		AgeAscSort ageAscSort = new AgeAscSort();
+		environment.setStrategy(ageAscSort);
+		environment.sort(list);
+		
+		AgeDescSort ageDescSort = new AgeDescSort();
+		environment.setStrategy(ageDescSort);
+		environment.sort(list);
 		
 		for(int i=0;i<list.size();i++){
 			Person p = (Person) list.get(i);
-			System.out.println(p.getAge()+":"+p.getId());
+			System.out.println(p.getId() + ":" + p.getName() + "(" + p.getAge() + ")");
 		}
 	}
 }
 
 interface SortStrategy{
-	public List<Object> compare(List<Object> list, boolean asc);
+	public void compare(List<Person> list);
 }
 
-class IdSort implements SortStrategy{
+class IdAscSort implements SortStrategy, Comparator<Person>{
 	@Override
-	public List<Object> compare(List<Object> list, boolean asc) {
-		Object[] array = list.toArray();
-		int len = array.length;
-		while(len>1){
-			for(int i=0;i<len-1;i++){
-				Person p1 = (Person) array[i];
-				Person p2 = (Person) array[i+1];
-				if((p1.getId()>p2.getId()&&asc)||(p1.getId()<p2.getId()&&!asc)){
-					Object temp = array[i];
-					array[i] = array[i+1];
-					array[i+1] = temp;
-				}
-			}
-			len--;
-		}
-		return Arrays.asList(array);
+	public void compare(List<Person> list) {
+		Collections.sort(list,this);
+	}
+
+	@Override
+	public int compare(Person o1, Person o2) {
+		return o1.getId() - o2.getId();
 	}
 }
 
-class NameSort implements SortStrategy{
+class IdDescSort implements SortStrategy, Comparator<Person>{
 	@Override
-	public List<Object> compare(List<Object> list, boolean asc) {
-		Object[] array = list.toArray();
-		int len = array.length;
-		while(len>1){
-			for(int i=0;i<len-1;i++){
-				Person p1 = (Person) array[i];
-				Person p2 = (Person) array[i+1];
-				if((p1.getName().compareTo(p2.getName())>0&&asc)||(p1.getName().compareTo(p2.getName())<0&&!asc)){
-					Object temp = array[i];
-					array[i] = array[i+1];
-					array[i+1] = temp;
-				}else if(p1.getName().compareTo(p2.getName())==0){
-					if(p1.getId()>p2.getId()){
-						Object temp = array[i];
-						array[i] = array[i+1];
-						array[i+1] = temp;
-					}
-				}
-			}
-			len--;
-		}
-		return Arrays.asList(array);
+	public void compare(List<Person> list) {
+		Collections.sort(list,this);
+	}
+
+	@Override
+	public int compare(Person o1, Person o2) {
+		return o2.getId() - o1.getId();
 	}
 }
 
-class AgeSort implements SortStrategy{
+class NameAscSort implements SortStrategy, Comparator<Person>{
 	@Override
-	public List<Object> compare(List<Object> list, boolean asc) {
-		Object[] array = list.toArray();
-		int len = array.length;
-		while(len>1){
-			for(int i=0;i<len-1;i++){
-				Person p1 = (Person) array[i];
-				Person p2 = (Person) array[i+1];
-				if((p1.getAge()>p2.getAge()&&asc)||(p1.getAge()<p2.getAge()&&!asc)){
-					Object temp = array[i];
-					array[i] = array[i+1];
-					array[i+1] = temp;
-				}else if(p1.getAge()==p2.getAge()){
-					if(p1.getId()>p2.getId()){
-						Object temp = array[i];
-						array[i] = array[i+1];
-						array[i+1] = temp;
-					}
-				}
-			}
-			len--;
+	public void compare(List<Person> list) {
+		Collections.sort(list, this);
+	}
+
+	@Override
+	public int compare(Person o1, Person o2) {
+		if(o1.getName()==o2.getName()){
+			return o1.getId() - o2.getId();
 		}
-		return Arrays.asList(array);
+		return o1.getName().compareTo(o2.getName());
+	}
+	
+}
+
+class NameDescSort implements SortStrategy, Comparator<Person>{
+	@Override
+	public void compare(List<Person> list) {
+		Collections.sort(list, this);
+	}
+
+	@Override
+	public int compare(Person o1, Person o2) {
+		if(o1.getName()==o2.getName()){
+			return o1.getId() - o2.getId();
+		}
+		return o2.getName().compareTo(o1.getName());
+	}
+	
+}
+
+class AgeAscSort implements SortStrategy, Comparator<Person>{
+	@Override
+	public void compare(List<Person> list) {
+		Collections.sort(list, this);
+	}
+
+	@Override
+	public int compare(Person o1, Person o2) {
+		if(o1.getAge()==o2.getAge()){
+			return o1.getId() - o2.getId();
+		}
+		return o1.getAge() - o2.getAge();
+	}
+}
+
+class AgeDescSort implements SortStrategy, Comparator<Person>{
+	@Override
+	public void compare(List<Person> list) {
+		Collections.sort(list, this);
+	}
+
+	@Override
+	public int compare(Person o1, Person o2) {
+		if(o1.getAge()==o2.getAge()){
+			return o1.getId() - o2.getId();
+		}
+		return o2.getAge() - o1.getAge();
 	}
 }
 
@@ -147,8 +171,8 @@ class Environment{
 		this.strategy = strategy;
 	}
 	
-	public List<Object> sort(List<Object> list, boolean asc){
-		return strategy.compare(list, asc);
+	public void sort(List<Person> list){
+		strategy.compare(list);
 	}
 	
 }
