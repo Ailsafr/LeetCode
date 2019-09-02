@@ -25,8 +25,8 @@ public class ConvertSortedListToBinarySearchTree {
 
 	/**
 	 * 我自己写的方法
-	 * 时间复杂度：O(n)
-	 * 空间复杂度：O(n)
+	 * 时间复杂度：O(nlogn)
+	 * 空间复杂度：O(logn)
 	 * @param head
 	 * @return
 	 */
