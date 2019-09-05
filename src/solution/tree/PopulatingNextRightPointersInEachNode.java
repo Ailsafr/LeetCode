@@ -23,15 +23,15 @@ package solution.tree;
  * 1. You may only use constant extra space.
  * 2. Recursive approach is fine, implicit stack space does not count as extra space for this problem.
  */
-class Node1 {
+class TreeLinkNode {
     public int val;
-    public Node1 left;
-    public Node1 right;
-    public Node1 next;
+    public TreeLinkNode left;
+    public TreeLinkNode right;
+    public TreeLinkNode next;
 
-    public Node1() {}
+    public TreeLinkNode() {}
 
-    public Node1(int _val, Node1 _left, Node1 _right, Node1 _next) {
+    public TreeLinkNode(int _val, TreeLinkNode _left, TreeLinkNode _right, TreeLinkNode _next) {
         val = _val;
         left = _left;
         right = _right;
@@ -48,7 +48,7 @@ public class PopulatingNextRightPointersInEachNode {
 	 * @param root
 	 * @return
 	 */
-	public static Node1 connect(Node1 root) {
+	public static TreeLinkNode connect(TreeLinkNode root) {
 		if(root == null) {
 	        return root;
 		}
@@ -69,7 +69,7 @@ public class PopulatingNextRightPointersInEachNode {
 	 * @param root
 	 * @return
 	 */
-	public void connect1(Node1 root) {
+	public void connect1(TreeLinkNode root) {
 	    if(root == null)
 	        return;
 	    if(root.left != null){
@@ -88,10 +88,10 @@ public class PopulatingNextRightPointersInEachNode {
 	 * @param root
 	 * @return
 	 */
-	public void connect2(Node1 root) {
+	public void connect2(TreeLinkNode root) {
         if(root==null) return;
-        Node1 cur = root;
-        Node1 nextLeftmost = null;
+        TreeLinkNode cur = root;
+        TreeLinkNode nextLeftmost = null;
 
         while(cur.left!=null){
             nextLeftmost = cur.left; // save the start of next level
@@ -111,11 +111,11 @@ public class PopulatingNextRightPointersInEachNode {
 	 * @param root
 	 * @return
 	 */
-	public void connect3(Node1 root) {
-		Node1 n = root;
+	public void connect3(TreeLinkNode root) {
+		TreeLinkNode n = root;
 	    while(n != null && n.left != null) {
-	    	Node1 pre = null;
-	        for(Node1 p = n; p != null; p = p.next) {
+	    	TreeLinkNode pre = null;
+	        for(TreeLinkNode p = n; p != null; p = p.next) {
 	            if(pre != null) pre.next = p.left;
 	            p.left.next = p.right;
 	            pre = p.right;
@@ -125,13 +125,13 @@ public class PopulatingNextRightPointersInEachNode {
 	}
 	
 	public static void main(String[] args) {
-		Node1 t7 = new Node1(7, null, null, null);
-		Node1 t6 = new Node1(6, null, null, null);
-		Node1 t5 = new Node1(5, null, null, null);
-		Node1 t4 = new Node1(4, null, null, null);
-		Node1 t3 = new Node1(3, t6, t7, null);
-		Node1 t2 = new Node1(2, t4, t5, null);
-		Node1 t1 = new Node1(1, t2, t3, null);
+		TreeLinkNode t7 = new TreeLinkNode(7, null, null, null);
+		TreeLinkNode t6 = new TreeLinkNode(6, null, null, null);
+		TreeLinkNode t5 = new TreeLinkNode(5, null, null, null);
+		TreeLinkNode t4 = new TreeLinkNode(4, null, null, null);
+		TreeLinkNode t3 = new TreeLinkNode(3, t6, t7, null);
+		TreeLinkNode t2 = new TreeLinkNode(2, t4, t5, null);
+		TreeLinkNode t1 = new TreeLinkNode(1, t2, t3, null);
 		
 		System.out.println(connect(t1));
 	}
