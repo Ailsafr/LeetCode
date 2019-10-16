@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * 策略模式
  * 假如有若干个Person对象存在一个List当中，对她们进行排序，分别按照名字，年龄，id进行排序（要有正序与倒序两种排序方式）。
  * 假如年龄或者姓名重复，按照id的正序进行排序。
  */
