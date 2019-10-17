@@ -1,4 +1,4 @@
-package brainteaser;
+package solution.brainteaser;
 
 import java.util.Arrays;
 
