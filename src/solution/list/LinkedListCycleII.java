@@ -79,7 +79,7 @@ public class LinkedListCycleII {
 	/**
 	 * 官网没有solution,这是其他人的答案
 	 * 时间复杂度：O(n)
-	 * 空间复杂度：O(1)
+	 * 空间复杂度：O(n)
 	 * @param head
 	 * @return
 	 */
