@@ -49,7 +49,7 @@ public class RepeatedDNASequences {
     }
 	
 	/**
-	 * 官网没有solution,这是其他人的答案,用的数组,跟我的思路一样
+	 * 官网没有solution,这是其他人的答案
 	 * 时间复杂度：O(n) 
 	 * 空间复杂度：O(n)
 	 * @param s
@@ -66,7 +66,7 @@ public class RepeatedDNASequences {
     }
 	
 	/**
-	 * 官网没有solution,这是其他人的答案,遍历一次
+	 * 官网没有solution,这是其他人的答案
 	 * 时间复杂度：O(n) 
 	 * 空间复杂度：O(n)
 	 * @param s
@@ -96,7 +96,7 @@ public class RepeatedDNASequences {
     }
 	
     /**
-	 * 官网没有solution,这是其他人的答案,遍历一次
+	 * 官网没有solution,这是其他人的答案
 	 * 时间复杂度：O(n) 
 	 * 空间复杂度：O(n)
 	 * @param s
